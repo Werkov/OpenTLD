@@ -6,7 +6,7 @@ include_directories(imacq
     ${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIB_DIR})
 
-add_library(libopentld
+set(SOURCES 
     imacq/ImAcq.cpp
     mftracker/BB.cpp
     mftracker/BBPredict.cpp
@@ -22,7 +22,9 @@ add_library(libopentld
     tld/NNClassifier.cpp
     tld/TLD.cpp
     tld/TLDUtil.cpp
-    tld/VarianceFilter.cpp
+    tld/VarianceFilter.cpp)
+
+set(HEADERS 
     imacq/ImAcq.h
     mftracker/BB.h
     mftracker/BBPredict.h
@@ -42,7 +44,14 @@ add_library(libopentld
     tld/TLDUtil.h
     tld/VarianceFilter.h)
 
+add_library(libopentld SHARED ${SOURCES} ${HEADERS})
+add_library(libopentld-static STATIC ${SOURCES} ${HEADERS})
+
 target_link_libraries(libopentld ${OpenCV_LIBS})
 
 set_target_properties(libopentld PROPERTIES OUTPUT_NAME opentld)
 
+install(TARGETS libopentld
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+)

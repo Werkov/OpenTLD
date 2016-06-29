@@ -33,7 +33,7 @@ target_link_libraries(main libopentld cvblobs config++ ${OpenCV_LIBS})
 add_executable(opentld
     OpenTLD.cpp)
 
-target_link_libraries(opentld main libopentld cvblobs config++ ${OpenCV_LIBS})
+target_link_libraries(opentld main libopentld-static cvblobs config++ ${OpenCV_LIBS})
 
 install(TARGETS opentld DESTINATION bin)
 
