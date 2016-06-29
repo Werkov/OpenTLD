@@ -19,7 +19,11 @@
 
 #include "Config.h"
 
+#include "DetectorCascade.h"
+#include "EnsembleClassifier.h"
 #include "Main.h"
+#include "NNClassifier.h"
+#include "VarianceFilter.h"
 
 using namespace std;
 

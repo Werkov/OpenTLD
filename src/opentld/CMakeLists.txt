@@ -4,6 +4,7 @@ link_directories(${OpenCV_LIB_DIR})
 include_directories(main
     ../libopentld/imacq
     ../libopentld/mftracker
+    ../libopentld
     ../libopentld/tld
     ../3rdparty/cvblobs
     ${OpenCV_INCLUDE_DIRS})

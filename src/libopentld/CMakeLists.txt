@@ -2,11 +2,12 @@
 include_directories(imacq
     mftracker
     tld
+    .
     ../3rdparty/cvblobs
     ${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIB_DIR})
 
-add_library(libopentld
+set(SOURCES 
     imacq/ImAcq.cpp
     mftracker/BB.cpp
     mftracker/BBPredict.cpp
@@ -22,7 +23,14 @@ add_library(libopentld
     tld/NNClassifier.cpp
     tld/TLD.cpp
     tld/TLDUtil.cpp
-    tld/VarianceFilter.cpp
+    tld/VarianceFilter.cpp)
+
+set(PUBLIC_HEADERS
+    tld/DetectorCascade.h
+    tld/TLD.h)
+
+set(HEADERS 
+    ${PUBLIC_HEADERS}
     imacq/ImAcq.h
     mftracker/BB.h
     mftracker/BBPredict.h
@@ -31,18 +39,23 @@ add_library(libopentld
     mftracker/Median.h
     tld/Clustering.h
     tld/DetectionResult.h
-    tld/DetectorCascade.h
     tld/EnsembleClassifier.h
     tld/ForegroundDetector.h
     tld/IntegralImage.h
     tld/MedianFlowTracker.h
     tld/NNClassifier.h
     tld/NormalizedPatch.h
-    tld/TLD.h
     tld/TLDUtil.h
     tld/VarianceFilter.h)
 
-target_link_libraries(libopentld ${OpenCV_LIBS})
+add_library(libopentld SHARED ${SOURCES} ${HEADERS})
 
+target_link_libraries(libopentld ${OpenCV_LIBS})
 set_target_properties(libopentld PROPERTIES OUTPUT_NAME opentld)
 
+install(TARGETS libopentld
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+)
+
+install(FILES ${PUBLIC_HEADERS} DESTINATION include/tld)

@@ -23,6 +23,7 @@
  *      Author: Georg Nebehay
  */
 
+#include "DetectionResult.h"
 #include "DetectorCascade.h"
 
 #include <cstdlib>

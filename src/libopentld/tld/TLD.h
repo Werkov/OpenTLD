@@ -28,12 +28,15 @@
 #define TLD_H_
 
 #include <opencv/cv.h>
-
-#include "MedianFlowTracker.h"
-#include "DetectorCascade.h"
+#include <tld/DetectorCascade.h>
 
 namespace tld
 {
+
+/* Forward declarations */
+class MedianFlowTracker;
+class NNClassifier;
+
 
 class TLD
 {

@@ -25,7 +25,12 @@
 
 #include "Main.h"
 
+#include <opencv/cv.hpp>
+
 #include "Config.h"
+#include "DetectorCascade.h"
+#include "DetectionResult.h"
+#include "ForegroundDetector.h"
 #include "ImAcq.h"
 #include "Gui.h"
 #include "TLDUtil.h"

@@ -1,4 +1,4 @@
-add_library(cvblobs
+add_library(cvblobs SHARED
     blob.cpp
     BlobContour.cpp
     BlobOperators.cpp
@@ -13,3 +13,7 @@ add_library(cvblobs
     BlobResult.h
     ComponentLabeling.h)
 
+install(TARGETS cvblobs
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+)

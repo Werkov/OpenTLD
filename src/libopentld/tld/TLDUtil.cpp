@@ -19,6 +19,8 @@
 
 #include "TLDUtil.h"
 
+#include <opencv/cv.hpp>
+
 #include "NormalizedPatch.h"
 #include "DetectorCascade.h"
 

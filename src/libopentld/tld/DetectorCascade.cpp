@@ -28,6 +28,12 @@
 
 #include <algorithm>
 
+#include "DetectionResult.h"
+#include "ForegroundDetector.h"
+#include "VarianceFilter.h"
+#include "EnsembleClassifier.h"
+#include "Clustering.h"
+#include "NNClassifier.h"
 #include "TLDUtil.h"
 
 using namespace cv;

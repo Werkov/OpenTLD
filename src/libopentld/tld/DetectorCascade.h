@@ -26,16 +26,18 @@
 #ifndef DETECTORCASCADE_H_
 #define DETECTORCASCADE_H_
 
-#include "DetectionResult.h"
-#include "ForegroundDetector.h"
-#include "VarianceFilter.h"
-#include "EnsembleClassifier.h"
-#include "Clustering.h"
-#include "NNClassifier.h"
-
+#include <opencv/cv.h>
 
 namespace tld
 {
+
+/* Forward declarations */
+class Clustering;
+class DetectionResult;
+class EnsembleClassifier;
+class ForegroundDetector;
+class NNClassifier;
+class VarianceFilter;
 
 //Constants
 static const int TLD_WINDOW_SIZE = 5;

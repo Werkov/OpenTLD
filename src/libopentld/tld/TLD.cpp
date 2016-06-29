@@ -26,9 +26,13 @@
 #include "TLD.h"
 
 #include <iostream>
+#include <opencv/cv.hpp>
 
+#include "EnsembleClassifier.h"
+#include "MedianFlowTracker.h"
 #include "NNClassifier.h"
 #include "TLDUtil.h"
+#include "VarianceFilter.h"
 
 using namespace std;
 using namespace cv;
