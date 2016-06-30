@@ -3,7 +3,7 @@ if(WIN32)
 	add_definitions(-DLIBCONFIGXX_STATIC -DLIBCONFIG_STATIC -DYY_NO_UNISTD_H -DYY_USE_CONST -D_CRT_SECURE_NO_DEPRECATE -D_STDLIB_H)
 endif(WIN32)
 
-add_library(config++
+add_library(config++ STATIC
     grammar.c
     libconfig.c
     libconfigcpp.cc

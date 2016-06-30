@@ -13,7 +13,9 @@ add_library(cvblobs SHARED
     BlobResult.h
     ComponentLabeling.h)
 
+target_link_libraries(cvblobs ${OpenCV_LIBS})
+
 install(TARGETS cvblobs
-	LIBRARY DESTINATION lib
-	ARCHIVE DESTINATION lib
+	LIBRARY DESTINATION lib64
+	ARCHIVE DESTINATION lib64
 )

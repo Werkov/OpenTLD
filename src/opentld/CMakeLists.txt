@@ -15,7 +15,7 @@ endif(NOT USE_SYSTEM_LIBS)
 
 #-------------------------------------------------------------------------------
 # main
-add_library(main
+add_library(main STATIC
     main/Config.cpp
     main/Gui.cpp
     main/Main.cpp

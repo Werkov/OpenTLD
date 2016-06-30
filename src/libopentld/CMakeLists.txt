@@ -50,12 +50,12 @@ set(HEADERS
 
 add_library(libopentld SHARED ${SOURCES} ${HEADERS})
 
-target_link_libraries(libopentld ${OpenCV_LIBS})
+target_link_libraries(libopentld ${OpenCV_LIBS} cvblobs)
 set_target_properties(libopentld PROPERTIES OUTPUT_NAME opentld)
 
 install(TARGETS libopentld
-	LIBRARY DESTINATION lib
-	ARCHIVE DESTINATION lib
+	LIBRARY DESTINATION lib64
+	ARCHIVE DESTINATION lib64
 )
 
 install(FILES ${PUBLIC_HEADERS} DESTINATION include/tld)
