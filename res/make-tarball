@@ -1,0 +1,6 @@
+#!/bin/sh
+
+version=`git describe --tags | tr - . | tr -d v`
+
+git archive --format=tar --prefix=opentld-$version/ HEAD | \
+	xz >opentld-${version}.tar.xz
